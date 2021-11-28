@@ -1,14 +1,14 @@
-defmodule Flightex.Factory do
+defmodule ExFlight.Factory do
   use ExMachina
 
-  alias Flightex.Bookings.Booking
-  alias Flightex.Users.User
+  alias ExFlight.Types.Booking
+  alias ExFlight.Types.User
 
-  def users_factory do
+  def user_factory do
     %User{
       id: UUID.uuid4(),
-      name: "Jp",
-      email: "jp@banana.com",
+      name: "Amy Santiago",
+      email: "amy.santiago@99precinct.com",
       cpf: "12345678900"
     }
   end
