@@ -1,7 +1,8 @@
 defmodule ExFlight.Agents.BookingAgent do
   @moduledoc """
-  Saves the state of a fligh booking.
+  Saves the state of a flight booking.
   """
+
   use Agent
 
   alias ExFlight.Types.Booking
