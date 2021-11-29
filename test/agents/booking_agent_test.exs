@@ -55,17 +55,8 @@ defmodule ExFlight.Agents.BookingAgentTest do
       assert response == expected_response
     end
 
-    test "when the user wasn't found, returns an error" do
-      {:ok, booking_id} =
-        :booking
-        |> build()
-        |> BookingAgent.insert()
-
-      response = BookingAgent.get(UUID.uuid4())
-
-      expected_response = {:error, :not_found}
-
-      assert response == expected_response
+    test "Fails when user does not exist" do
+      assert {:error, :not_found} == BookingAgent.get(UUID.uuid4())
     end
   end
 end
