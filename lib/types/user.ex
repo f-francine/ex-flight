@@ -1,6 +1,6 @@
 defmodule ExFlight.Types.User do
   @moduledoc """
-  Validates the user input and when params are valid, generates an user struct.
+  Defines the user struct and validates the given input.
   """
 
   @enforce_keys [:name, :email, :cpf, :id]
@@ -13,12 +13,14 @@ defmodule ExFlight.Types.User do
   def build(name, email, cpf) do
     with {:email, true} <- {:email, valid_email?(email)},
          {:cpf, true} <- {:cpf, valid_cpf?(cpf)} do
-     {:ok, %__MODULE__{
-        cpf: cpf,
-        email: email,
-        id: UUID.uuid4(),
-        name: name
-      }}
+      {:ok,
+       %__MODULE__{
+         cpf: cpf,
+         email: email,
+         id: UUID.uuid4(),
+         name: name,
+         inserted_at: NaiveDateTime.utc_now()
+       }}
     else
       {:email, false} -> {:error, :invalid_email}
       {:cpf, false} -> {:error, :invalid_cpf}
