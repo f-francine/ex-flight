@@ -1,9 +1,9 @@
-defmodule Flightex.MixProject do
+defmodule ExFlight.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :flightex,
+      app: :ExFlight,
       version: "0.1.0",
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
