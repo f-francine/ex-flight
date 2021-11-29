@@ -1,7 +1,7 @@
-defmodule Flightex.Bookings.BookingTest do
+defmodule ExFlight.Types.BookingTest do
   use ExUnit.Case, async: false
 
-  alias Flightex.Bookings.Booking
+  alias ExFlight.Types.Booking
 
   describe "build/4" do
     test "when all params are valid, returns a booking" do
@@ -13,7 +13,7 @@ defmodule Flightex.Bookings.BookingTest do
           "12345678900"
         )
 
-      expected_response = %Flightex.Bookings.Booking{
+      expected_response = %Booking{
         complete_date: ~N[2001-05-07 01:46:20],
         id: response.id,
         local_destination: "ilha das bananas",
