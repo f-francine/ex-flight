@@ -1,6 +1,6 @@
 defmodule ExFlight.Agents.UserAgent do
   @moduledoc """
-  Saves the state of a user.
+  Saves the state of an user.
   """
   use Agent
 
